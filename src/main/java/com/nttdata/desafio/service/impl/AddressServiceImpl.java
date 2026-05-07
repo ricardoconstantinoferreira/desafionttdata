@@ -4,7 +4,6 @@ import com.nttdata.desafio.dto.AddressResponseDto;
 import com.nttdata.desafio.entity.AddressLog;
 import com.nttdata.desafio.repository.AddressLogRepository;
 import com.nttdata.desafio.service.AddressService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
