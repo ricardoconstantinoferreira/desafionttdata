@@ -1,6 +1,6 @@
 package com.nttdata.desafio.service.impl;
 
-import com.nttdata.desafio.dto.AddressResponseDto;
+import com.nttdata.desafio.dto.EnderecoDTO;
 import com.nttdata.desafio.entity.AddressLog;
 import com.nttdata.desafio.repository.AddressLogRepository;
 import com.nttdata.desafio.service.AddressService;
@@ -17,7 +17,7 @@ public class AddressServiceImpl implements AddressService {
     private final AddressLogRepository addressLogRepository;
     private final ObjectMapper objectMapper;
 
-    @Value("${mockoon.api.url}")
+    @Value("${viacep.base.url}")
     private String baseUrl;
 
     public AddressServiceImpl(
@@ -32,8 +32,8 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public AddressLog getAddressByZipcode(String zipcode) throws Exception {
         try {
-            String uri = baseUrl + zipcode;
-            AddressResponseDto dto = restTemplate.getForObject(uri, AddressResponseDto.class);
+            String uri = baseUrl + zipcode + "/json/";
+            EnderecoDTO dto = restTemplate.getForObject(uri, EnderecoDTO.class);
             String description = objectMapper.writeValueAsString(dto);
             return this.save(description);
         } catch (HttpClientErrorException.NotFound e) {
