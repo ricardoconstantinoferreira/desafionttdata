@@ -1,9 +1,10 @@
-# ☕ Java   🌱 Spring Boot   🐬 MySQL   🐳 Docker   🧪 Mockoon
+# ☁️ AWS   ☕ Java   🌱 Spring Boot   🐬 MySQL   🐳 Docker   🧪 Mockoon
 
 ## Descrição
 API simples em Spring Boot que consulta endereços por CEP (zipcode) através de uma API externa (mock) e persiste logs de consulta.
 
 ## Tecnologias
+- ☁️ AWS
 - ☕ Java 17
 - 🌱 Spring Boot
 - 🐬 MySQL
